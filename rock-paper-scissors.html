@@ -5,125 +5,53 @@
   </head>
   <body>
     <p>Rock Paper Scissors</p>
-    <button
-      onclick="
-    randomNumber = Math.random();
-    let checkit = 5;
-
-    if (randomNumber >= 0 && randomNumber < 1/3)
-    {
-      computerChoice = 'Rock';
-    }
-    else if (randomNumber >= 1/3 && randomNumber < 2/3)
-    {
-      computerChoice = 'Paper';
-    }
-    else if (randomNumber >= 2/3 && randomNumber < 1)
-    {
-      computerChoice = 'Scissors';
-    }
-
-
-    if (computerChoice === 'Rock')
-    {
-      result = 'It\'s a Tie.';
-    }
-    else if (computerChoice === 'Paper')
-    {
-      result = 'You Lose!';
-    }
-    else
-    {
-      result = 'You Win!';
-    }
-
-    alert(
-      `You Picked Rock. The Computer Picked ${computerChoice}. ${result}.`
-    );
-    "
-    >
-      Rock
-    </button>
-    <button
-      onclick="
-      randomNumber = Math.random();
-    if (randomNumber >= 0 && randomNumber < 1/3)
-    {
-      computerChoice = 'Rock';
-    }
-    else if (randomNumber >= 1/3 && randomNumber < 2/3)
-    {
-      computerChoice = 'Paper';
-    }
-    else if (randomNumber >= 2/3 && randomNumber < 1)
-    {
-      computerChoice = 'Scissors';
-    }
-
-    if (computerChoice === 'Rock')
-    {
-      result = 'You Win!';
-    }
-    else if (computerChoice === 'Paper')
-    {
-      result = 'It\'s a Tie.';
-    }
-    else
-    {
-      result = 'You Lose!';
-    }
-
-    alert(
-      `You Picked Paper. The Computer Picked ${computerChoice}. ${result}.`
-    );
-    "
-    >
-      Paper
-    </button>
-    <button
-      onclick="
-    randomNumber = Math.random();
-
-    if (randomNumber >= 0 && randomNumber < 1/3)
-    {
-      computerChoice = 'Rock';
-    }
-    else if (randomNumber >= 1/3 && randomNumber < 2/3)
-    {
-      computerChoice = 'Paper';
-    }
-    else if (randomNumber >= 2/3 && randomNumber < 1)
-    {
-      computerChoice = 'Scissors';
-    }
-
-    if (computerChoice === 'Rock')
-    {
-      result = 'You Lose!';
-    }
-    else if (computerChoice === 'Paper')
-    {
-      result = 'You Win!';
-    }
-    else
-    {
-      result = 'It\'s a Tie.';
-    }
-
-    alert(
-      `You Picked Scissors. The Computer Picked ${computerChoice}. ${result}.`
-    );
-    "
-    >
-      Scissors
-    </button>
+    <button onclick="playGame('Rock');">Rock</button>
+    <button onclick="playGame('Paper');">Paper</button>
+    <button onclick="playGame('Scissors');">Scissors</button>
     <script>
-      // let randomNumber = 0;
+      function playGame(userChoice) {
+        const randomNumber = Math.random();
 
-      // let computerChoice = "";
+        let computerChoice = "";
+        let result = "";
 
-      // let result = "";
-      console.log(checkit);
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerChoice = "Rock";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerChoice = "Paper";
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerChoice = "Scissors";
+        }
+
+        if (userChoice === computerChoice) {
+          result = "It's a Tie.";
+        } else if (
+          (userChoice === "Rock" && computerChoice === "Scissors") ||
+          (userChoice === "Paper" && computerChoice === "Rock") ||
+          (userChoice === "Scissors" && computerChoice === "Paper")
+        ) {
+          result = "You Win!";
+        } else {
+          result = "You Lose!";
+        }
+        // else if (userChoice === "Rock" && computerChoice === "Paper") {
+        //   result = "You Lose!";
+        // } else if (userChoice === "Rock" && computerChoice === "Scissors") {
+        //   result = "You Win!";
+        // } else if (userChoice === "Paper" && computerChoice === "Rock") {
+        //   result = "You Win!";
+        // } else if (userChoice === "Paper" && computerChoice === "Scissors") {
+        //   result = "You Lose!";
+        // } else if (userChoice === "Scissors" && computerChoice === "Rock") {
+        //   result = "You Lose!";
+        // } else if (userChoice === "Scissors" && computerChoice === "Paper") {
+        //   result = "You Win!";
+        // }
+
+        alert(
+          `You Picked ${userChoice}. The Computer Picked ${computerChoice}. ${result}`
+        );
+      }
     </script>
   </body>
 </html>
