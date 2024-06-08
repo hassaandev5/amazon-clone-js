@@ -73,7 +73,7 @@
       function removeFromCart(items) {
         quantity -= items;
         if (quantity < 0) {
-          alert("Cart is empty");
+          alert("Cart items cannot drop below 0");
           quantity += items;
         }
       }
