@@ -6,23 +6,28 @@
   <body>
     <button
       onclick="
-casty = 'casty';
-if (casty == 'casty') {
-console.log('yay');
-}
-else{
-console.log('nay');
-}
+      /* this variable 'variableG' will be created as a global Variable by the javaScript Engine
+       because it is not explicitly declared by the let or const keyword */
+        variableG = 'I am a global variable';
+        /* also if the it's only written as 'variableG;' the js engine will not create it as global variable instead gives an error 'variableG is not defined'. The only time the javaScript engine will create the variable(global) implicitly if the variable is assigned to a value without being declared */
+        if (variableG) {
+        console.log('yay!');
+        }
+        else{
+        console.log('nope');
+        }
 "
     >
-      casty
+      Button 1
     </button>
     <button
       onclick="
-console.log(casty);
-"
+    /* when the onclick of the button 'Button 1' is executed, 'variableG' will be created as a global variable
+       and it will available to the 'Button 2' and if the onclick of Button 2 is executed first then it will give an error saying 'variableG' is not defined since the variable is not created */
+    console.log(variableG);
+    "
     >
-      fasty
+      Button 2
     </button>
   </body>
 </html>
