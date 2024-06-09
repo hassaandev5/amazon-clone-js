@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scope</title>
+  </head>
+  <body>
+    <button
+      onclick="
+casty = 'casty';
+if (casty == 'casty') {
+console.log('yay');
+}
+else{
+console.log('nay');
+}
+"
+    >
+      casty
+    </button>
+    <button
+      onclick="
+console.log(casty);
+"
+    >
+      fasty
+    </button>
+  </body>
+</html>
