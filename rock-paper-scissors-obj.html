@@ -8,6 +8,7 @@
     <button onclick="playGame('Rock');">Rock</button>
     <button onclick="playGame('Paper');">Paper</button>
     <button onclick="playGame('Scissors');">Scissors</button>
+    <button onclick="resetScore()">Reset Score</button>
     <script>
       const score = { win: 0, lose: 0, tie: 0 };
       function playGame(userChoice) {
@@ -47,6 +48,19 @@
           computerChoice = "Scissors";
         }
         return computerChoice;
+      }
+      function resetScore() {
+        if (score.win == 0 && score.lose == 0 && score.tie == 0) {
+          alert("No score to reset, Play some games first.");
+        } else {
+          Object.assign(score, { win: 0, lose: 0, tie: 0 });
+          alert("Score has been reset.");
+          //   score.win = 0;
+          //   score.lose = 0;
+          //   score.tie = 0;
+
+          //   alert("Score has been reset.");
+        }
       }
     </script>
   </body>
