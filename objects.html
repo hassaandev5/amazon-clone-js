@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "basketball",
+        price: 103,
+      };
+      console.log(product);
+      console.log(product.price);
+
+      product.price = 105;
+      console.log(product.price);
+
+      product.newPrperty = false;
+
+      console.log(product);
+
+      delete product.newPrperty;
+
+      console.log(product);
+    </script>
+  </body>
+</html>
