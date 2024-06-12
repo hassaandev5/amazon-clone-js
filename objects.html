@@ -11,26 +11,47 @@
   </head>
   <body>
     <script>
+      // Javascript objects: JS object is a type of value (Key, Pair)
+
       const product = {
         name: "basketball",
         price: 103,
+        "": 5,
+        ratings: {
+          stars: 4,
+          count: 20,
+        },
+        // keys/properties being just stings that have a value associated with it
+        // that means we can even use a keyword as key/property Name (which is a bad practice)
+        for: "loops",
+        fun: function someFunction() {
+          console.log("Funtion inside an object");
+        },
       };
 
-      console.log(product);
-      console.log(product.price);
-      console.log(product.name);
-
-      product.price = 105;
-      console.log(product.price);
-      console.log(product);
-
-      product.newPrperty = false;
+      //   product.for;
+      //   product["for"];
+      console.log(product.for);
 
       console.log(product);
+      console.log(product.ratings.stars);
+      console.log(product["ratings"]["stars"]);
 
-      delete product.newPrperty;
+      // literally logs the function name(parameters) and the body
+      console.log(product.fun);
+      // invokes the function related to fun key/property
+      product.fun();
 
-      console.log(product);
+      //   console.log(console.log);
+      //   console.log(product);
+
+      //   product.newPrperty = false;
+
+      //   console.log(product);
+
+      //   delete product.newPrperty;
+
+      //   console.log(product);
     </script>
   </body>
 </html>
