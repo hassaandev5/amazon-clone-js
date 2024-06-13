@@ -58,6 +58,64 @@
       //JSON.parse is a method that takes a string literal and convert's it into Js object (note: the string to be parsed must be JSON otherwise it will generate error "string is not valid JSON")
       const jsonString = JSON.stringify(product);
       console.log(JSON.parse(jsonString));
+
+
+      // Auto Boxing (JS box other values into a special object and these objects have properties & methods like length and toUppperCase() from example below)
+      console.log('jhon'.length);
+      console.log('jhon'.toUpperCase());
+
+
+      // Objects are references
+      // so this object1 variable is not actully storing the key/value value type. it's strong the reference to this value type
+      const object1 = {
+        message : 'hello'
+      };
+      // the object2 is getting the reference from object1 (this is know as Copy/pass by reference)
+      const object2 = object1;
+      // the const keyword won't let the object1 to refer any other object but we can go into the reference and can change the value of a key
+      object1.message = 'good job !';
+      console.log(object1.message);
+      console.log(object2.message);
+
+      const object3 = {
+        message : 'good job !'
+      }
+
+      // this compare's the reference
+      console.log(object3 === object1); // false
+      console.log(object1 === object2); // true
+
+      const object4 = {
+        message : 'good job !',
+        price : 556
+    }
+
+    // object shortcut's
+
+    // if the variable name and the object property name are same(while assigining value to the variable) we can use destructuring
+    // const message = object4.message;
+    // const price = object4.price;
+    const { message, price } = object4; // destructuring (takes the message & price property from object4 and store it in variable message)
+
+    // Destructuring : easier way to take properties out of an object
+
+    // shorthand property
+
+    const object5 = {
+      // message : message
+      message, // shorthand property
+      
+      // method: function fun()
+      // {
+      //   console.log('grettings from method');
+      // }
+      method() // shorthand method
+      {
+        console.log('grettings from method');
+      }
+    }
+
+    object5.method();
     </script>
   </body>
 </html>
