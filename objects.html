@@ -16,7 +16,9 @@
       const product = {
         name: "basketball",
         price: 103,
-        "": 5,
+        // even if I name the key/property with and empty string ''(ps: my prettier code extension might have converted it to ""), it will appear in the console as in double couts ""
+        // this is because each key/property in Js is a string literal & the reason it is in double quots bcs it's easy to relate with JSON (Javascript object notation)
+        '': 5,
         ratings: {
           stars: 4,
           count: 20,
@@ -43,15 +45,19 @@
       product.fun();
 
       //   console.log(console.log);
-      //   console.log(product);
-
       //   product.newPrperty = false;
-
       //   console.log(product);
-
       //   delete product.newPrperty;
-
       //   console.log(product);
+
+      // JSON (Javascript object notation)
+
+      // this literally converts js object into a string: '{"name":"basketball","price":103,"":5,"ratings":{"stars":4,"count":20},"for":"loops"}' this string is literally JSON. If this string is saved/written in a file (with .json extention) it becomes JSON file, with this we can send JSON data to other computers or save it in local storage
+      console.log(JSON.stringify(product));
+
+      //JSON.parse is a method that takes a string literal and convert's it into Js object (note: the string to be parsed must be JSON otherwise it will generate error "string is not valid JSON")
+      const jsonString = JSON.stringify(product);
+      console.log(JSON.parse(jsonString));
     </script>
   </body>
 </html>
