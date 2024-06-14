@@ -22,9 +22,19 @@
                 name : 'toster',
                 price : 50000
             }
+            const exProduct = {
+                name : 'toster',
+                price : 50000
+            }
 
             const cheapProduct = comparePrice(sProduct, tProduct);
             console.log(cheapProduct);
+
+            console.log(isSameProduct(tProduct, exProduct));
+
+            let str = 'Hi I am Jhon';
+            console.log(str.toLowerCase());
+            console.log(str.repeat(3));
 
             function comparePrice( product1, product2)
             {
@@ -37,6 +47,16 @@
                 {
                     console.log(`${product2.name} is less expensive than ${product1.name}`);
                     return product2.name;
+                }
+            }
+            function isSameProduct(product1, product2){
+                if (product1.name === product2.name && product1.price === product2.price)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
         </script>
