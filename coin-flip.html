@@ -23,7 +23,7 @@
     <p>Flip the coin</p>
     <button
       onclick="
-      if(guess == undefined)
+      if(guess == '')
       {
         alert('Please guess the coin flip first');
       }
@@ -35,11 +35,11 @@
       Flip Coin
     </button>
     <script>
-      let guess;
+      let guess = '';
       function coinFlip(guessFlip) {
         let randomNumber = Math.random();
 
-        let result;
+        let result = '';
         if (randomNumber < 0.5) {
           result = "Heads";
         } else {
@@ -52,7 +52,7 @@
           );
         } else {
           alert(
-            `You guessed right! your guess was ${guessFlip} and the coin flip was ${result}`
+            `You guessed wrong! your guess was ${guessFlip} and the coin flip was ${result}`
           );
         }
       }
