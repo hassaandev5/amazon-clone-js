@@ -36,6 +36,7 @@
     </button>
     <script>
       let guess = '';
+      const score = JSON.parse(localStorage.getItem('coinScore')) || {wins : 0, losses : 0};
       function coinFlip(guessFlip) {
         let randomNumber = Math.random();
 
@@ -47,13 +48,20 @@
         }
 
         if (guessFlip === result) {
+          score.wins++;
+          localStorage.setItem('coinScore', JSON.stringify(score));
           alert(
-            `You guessed right! your guess was ${guessFlip} and the coin flip was ${result}`
+            `You guessed right! your guess was ${guessFlip} and the coin flip was ${result}\nWins : ${score.wins} Losses : ${score.losses}`
           );
+          console.log(score);
         } else {
+          score.losses++;
+          localStorage.setItem('coinScore', JSON.stringify(score));
           alert(
-            `You guessed wrong! your guess was ${guessFlip} and the coin flip was ${result}`
+            `You guessed wrong! your guess was ${guessFlip} and the coin flip was ${result}\nWins : ${score.wins} Losses : ${score.losses}`
           );
+
+          console.log(score);
         }
       }
     </script>
