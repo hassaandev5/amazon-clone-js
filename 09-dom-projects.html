@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Document Object Model - Exercise</title>
-</head>
-<body>
+  <head>
+    <title>Document Object Model - Projects</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="sub();" class="js-sub-btn">Subscribe</button>
     <script>
-        
+      let btnElement = document.querySelector(".js-sub-btn");
+      // console.log(document.querySelector(".js-sub-btn"));
+      function sub() {
+        if (btnElement.innerText === "Subscribe") {
+          btnElement.innerText = "Subscribed";
+        } else {
+          btnElement.innerText = "Subscribe";
+        }
+      }
     </script>
-</body>
-</html> 
+  </body>
+</html>
+
+<!-- process
+1. when button is clicked
+2. if the text is 'subscribe' change the button innerHTML with 'Subscribed'
+3. else change it back to 'Subscribe'
+-->
