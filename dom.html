@@ -4,6 +4,15 @@
     <title>Document Object Model</title>
 </head>
 <body>
+    <button>
+        button1
+    </button>
+    <button class="js-btn2">
+        button2
+    </button>
+    <button>
+        button3
+    </button>
     <script>
         /*
         let haha = {
@@ -17,6 +26,18 @@
         // document.body.innerHTML = 'hey';
         // document.title = 'it\'s dom boys'
         console.log(document.title);
+        document.title = 'changed';
+        console.log(document)
+        console.log(document.body);
+        // it takes a Js string or a js value(it's first solve it) and convert it to string and replace it with innerHTML of body! (if that sring is HTML element it renders it )
+        console.log(document.body.innerHTML);
+        // document.body.innerHTML = "<button> yahoo </button>";
+        // console.log(document.body.innerHTML);
+        document.querySelector('button')
+            .innerHTML = 'buttonSSS';
+        console.log(document.querySelector('button'));
+        const btnElement = document.querySelector('.js-btn2');
+        console.log(btnElement)
     </script>
 </body>
-</html>
+</html> 
