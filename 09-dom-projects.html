@@ -14,15 +14,12 @@
       class="js-cost-input"
       type="text"
       placeholder="cost of order"
-      onkeydown="
-    if (event.key === 'Enter')
-    {
-      calculateTotalCost();
-    }"
+      onkeydown="handelCostEnterKey(event)"
     />
     <button onclick="calculateTotalCost()">Calculate</button>
     <p class="js-cost-result"></p>
     <script>
+      // console.log(window);
       // console.log(document.querySelector(".js-sub-btn"));
       function sub() {
         const subBtnElement = document.querySelector(".js-sub-btn");
@@ -36,18 +33,22 @@
         const calBtnElement = document.querySelector(".js-cost-input");
         let cost = Number(calBtnElement.value);
 
-        if (cost < 40) {
-          cost += 10;
-        }
+        if (isNaN(cost)) {
+          document.querySelector(".js-cost-result").innerHTML =
+            "Invalid Cost Input";
+        } else {
+          if (cost < 40) {
+            cost += 10;
+          }
 
-        document.querySelector(".js-cost-result").innerHTML = `$${cost}`;
+          document.querySelector(".js-cost-result").innerHTML = `$${cost}`;
+        }
+      }
+      function handelCostEnterKey(event) {
+        if (event.key === "Enter") {
+          calculateTotalCost();
+        }
       }
     </script>
   </body>
 </html>
-
-<!-- process
-1. when button is clicked
-2. if the text is 'subscribe' change the button innerHTML with 'Subscribed'
-3. else change it back to 'Subscribe'
--->
