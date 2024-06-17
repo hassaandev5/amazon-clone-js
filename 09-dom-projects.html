@@ -18,9 +18,18 @@
     />
     <button onclick="calculateTotalCost()">Calculate</button>
     <p class="js-cost-result"></p>
+    <input
+      type="text"
+      class="js-keyup-input"
+      placeholder="Start Typing"
+      onkeyup="printKeyRelease()"
+    />
+    <button onclick="clearText()">Clear</button>
+    <p class="js-keyup-result"></p>
     <script>
       // console.log(window);
       // console.log(document.querySelector(".js-sub-btn"));
+      const paraPrint = document.querySelector(".js-keyup-result");
       function sub() {
         const subBtnElement = document.querySelector(".js-sub-btn");
         if (subBtnElement.innerText === "Subscribe") {
@@ -39,6 +48,7 @@
         } else {
           if (cost < 40) {
             cost += 10;
+            cost = Math.round(cost * 100) / 100;
           }
 
           document.querySelector(".js-cost-result").innerHTML = `$${cost}`;
@@ -48,6 +58,13 @@
         if (event.key === "Enter") {
           calculateTotalCost();
         }
+      }
+      function printKeyRelease() {
+        const inputPrintElem = document.querySelector(".js-keyup-input");
+        paraPrint.innerText = inputPrintElem.value;
+      }
+      function clearText() {
+        paraPrint.innerText = "";
       }
     </script>
   </body>
