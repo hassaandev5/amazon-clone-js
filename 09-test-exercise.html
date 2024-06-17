@@ -10,9 +10,32 @@
     <button class="js-heads-btn" onclick="coinFlip('heads')">heads</button>
     <button class="js-tails-btn" onclick="coinFlip('tails')">tails</button>
     <p class="js-p-result"></p>
+    <p></p>
+    <input
+      type="text"
+      class="js-name-input"
+      placeholder="Enter your name"
+      onkeydown="keyDownName()"
+    />
+    <button onclick="displayName()">Submit</button>
+    <p class="js-name-para"></p>
 
     <script>
       console.log(document.querySelector("button"));
+
+      function displayName() {
+        const inputName = document.querySelector(".js-name-input").value;
+        // let personName =
+        console.log(inputName);
+        document.querySelector(
+          ".js-name-para"
+        ).innerText = `Your Name is : ${inputName}`;
+      }
+      function keyDownName() {
+        if (event.key === "Enter") {
+          displayName();
+        }
+      }
       function doneBtn() {
         document.querySelector(".js-9b-btn").innerHTML = "9b done";
       }
