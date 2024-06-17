@@ -6,41 +6,43 @@
   <body>
     <h1>Coin Flip</h1>
     <p>Guess the coin flip</p>
-    <button
-      onclick="
-    guess = 'Heads';
-    alert('You have chosen Heads');
-    "
-    >
-      Heads
-    </button>
-    <button
-      onclick="guess = 'Tails'
-    alert('You have chosen Tails');"
-    >
-      Tails
-    </button>
+    <button onclick="coinChoice('Heads')">Heads</button>
+    <button onclick="coinChoice('Tails')">Tails</button>
+    <span class="js-span-choice"></span>
     <p>Flip the coin</p>
-    <button
-      onclick="
-      if(guess == '')
-      {
-        alert('Please guess the coin flip first');
-      }
-      else{
-        coinFlip(guess);
-      }
-        "
-    >
-      Flip Coin
-    </button>
+    <button onclick="coinFlip(guess);">Flip Coin</button>
+    <button onclick="resetScore()">Reset Score</button>
+    <p class="js-flip-result"></p>
+    <p class="js-flip-score"></p>
     <script>
-      let guess = '';
-      const score = JSON.parse(localStorage.getItem('coinScore')) || {wins : 0, losses : 0};
+      let guess = "";
+      const score = JSON.parse(localStorage.getItem("coinScore")) || {
+        wins: 0,
+        losses: 0,
+      };
+      const coinFlipScore = document.querySelector(".js-flip-score");
+
+      updateScore();
+
+      function updateScore() {
+        coinFlipScore.innerText = `Wins : ${score.wins} Losses : ${score.losses}`;
+      }
+
+      function coinChoice(userChoice) {
+        guess = userChoice;
+        document.querySelector(
+          ".js-span-choice"
+        ).innerText = `You chose : ${guess}`;
+      }
       function coinFlip(guessFlip) {
+        const paraElem = document.querySelector(".js-flip-result");
+        if (guessFlip === "") {
+          paraElem.innerText = "Please guess the coin flip first";
+          return;
+        }
         let randomNumber = Math.random();
 
-        let result = '';
+        let result = "";
         if (randomNumber < 0.5) {
           result = "Heads";
         } else {
@@ -49,19 +51,34 @@
 
         if (guessFlip === result) {
           score.wins++;
-          localStorage.setItem('coinScore', JSON.stringify(score));
-          alert(
-            `You guessed right! your guess was ${guessFlip} and the coin flip was ${result}\nWins : ${score.wins} Losses : ${score.losses}`
-          );
+          localStorage.setItem("coinScore", JSON.stringify(score));
+
+          paraElem.innerText = `You guessed right! your guess was ${guessFlip} and the coin flip was ${result}`;
+          updateScore();
           console.log(score);
         } else {
           score.losses++;
-          localStorage.setItem('coinScore', JSON.stringify(score));
-          alert(
-            `You guessed wrong! your guess was ${guessFlip} and the coin flip was ${result}\nWins : ${score.wins} Losses : ${score.losses}`
-          );
+          localStorage.setItem("coinScore", JSON.stringify(score));
+          // alert(
+          //   `You guessed wrong! your guess was ${guessFlip} and the coin flip was ${result}\nWins : ${score.wins} Losses : ${score.losses}`
+          // );
+          paraElem.innerText = `You guessed wrong! your guess was ${guessFlip} and the coin flip was ${result}`;
 
+          updateScore();
           console.log(score);
+        }
+      }
+      function resetScore() {
+        if (score.wins === 0 && score.losses === 0) {
+          coinFlipScore.innerText = "No score to reset, flip a coin first.";
+        } else {
+          score.wins = 0;
+          score.losses = 0;
+          console.log(score);
+
+          localStorage.removeItem("coinScore");
+
+          updateScore();
         }
       }
     </script>
