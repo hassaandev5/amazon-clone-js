@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model - Exercise</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-9b-btn" onclick="doneBtn()">9b</button>
+    <p></p>
+    <button class="js-heads-btn" onclick="coinFlip('heads')">heads</button>
+    <button class="js-tails-btn" onclick="coinFlip('tails')">tails</button>
+    <p class="js-p-result"></p>
+
+    <script>
+      console.log(document.querySelector("button"));
+      function doneBtn() {
+        document.querySelector(".js-9b-btn").innerHTML = "9b done";
+      }
+      function coinFlip(choice) {
+        const parahElement = document.querySelector(".js-p-result");
+        if (choice === "heads") {
+          parahElement.innerHTML = "You chose : heads";
+        } else {
+          parahElement.innerHTML = "You chose : tails";
+        }
+      }
+    </script>
+  </body>
+</html>
