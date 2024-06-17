@@ -5,6 +5,7 @@
   </head>
   <body>
     <p>Calculator</p>
+    <p class="js-calculation"></p>
     <p>
       <button onclick="updateCalculation('1');">1</button>
       <button onclick="updateCalculation('2');">2</button>
@@ -27,31 +28,34 @@
     <p>
       <button onclick="updateCalculation('0');">0</button>
       <button onclick="updateCalculation('.');">.</button>
-      <button
-        onclick=" calculation = eval(calculation);
-        localStorage.setItem('calculation', calculation)
-        console.log(calculation);"
-      >
-        =
-      </button>
+      <button onclick="calculationResult()">=</button>
       <button onclick="updateCalculation(' / ');">/</button>
     </p>
     <p>
-      <button
-        onclick="calculation = '';
-        localStorage.setItem('calculation', calculation)
-        console.log('Cleared');"
-      >
-        Clear
-      </button>
+      <button onclick="clearCalculation()">Clear</button>
     </p>
     <script>
       // let calculation = "";
-      let calculation = localStorage.getItem('calculation') || "";
+      let calculation = localStorage.getItem("calculation") || "";
+      const paraCal = document.querySelector(".js-calculation");
+      paraCal.innerText = `${calculation}`;
       function updateCalculation(number) {
         calculation += number;
-        localStorage.setItem('calculation', calculation)
+        localStorage.setItem("calculation", calculation);
         console.log(calculation);
+        paraCal.innerText = `${calculation}`;
+      }
+      function clearCalculation() {
+        calculation = "";
+        localStorage.setItem("calculation", calculation);
+        console.log("Cleared");
+        paraCal.innerText = `${calculation}`;
+      }
+      function calculationResult() {
+        calculation = eval(calculation);
+        localStorage.setItem("calculation", calculation);
+        console.log(calculation);
+        paraCal.innerText = `${calculation}`;
       }
     </script>
   </body>
