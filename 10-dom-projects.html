@@ -2,10 +2,24 @@
 <html>
   <head>
     <title>Document Object Model - Projects</title>
+    <style>
+      .sub-btn {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <p>Youtube Subscribe Button</p>
-    <button onclick="sub();" class="js-sub-btn">Subscribe</button>
+    <button onclick="sub();" class="js-sub-btn sub-btn">Subscribe</button>
 
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping</p>
@@ -34,6 +48,7 @@
         const subBtnElement = document.querySelector(".js-sub-btn");
         if (subBtnElement.innerText === "Subscribe") {
           subBtnElement.innerText = "Subscribed";
+          subBtnElement.classList.add("is-subscribed");
         } else {
           subBtnElement.innerText = "Subscribe";
         }
