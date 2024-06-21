@@ -88,11 +88,14 @@
           resParaElement.innerHTML = "Enter a cost first";
           // return;
         } else if (isNaN(cost)) {
-          resParaElement.innerHTML = "Invalid Cost Input";
+          resParaElement.innerHTML = "Error: Invalid Cost Input";
         } else {
-          if (cost < 40) {
+          if (cost < 40 && cost >= 0) {
             cost += 10;
             cost = Math.round(cost * 100) / 100;
+          } else if (cost < 0) {
+            resParaElement.innerHTML = "Error: Cost Cannot be less than $0";
+            return;
           }
 
           resParaElement.innerHTML = `$${cost}`;
