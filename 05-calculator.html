@@ -2,61 +2,87 @@
 <html lang="en">
   <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="./styles/05-calculator.css" />
   </head>
   <body>
-    <p>Calculator</p>
-    <p class="js-calculation"></p>
+    <p class="js-calculation calculation"></p>
     <p>
-      <button onclick="updateCalculation('1');">1</button>
-      <button onclick="updateCalculation('2');">2</button>
-      <button onclick="updateCalculation('3');">3</button>
-      <button onclick="updateCalculation(' + ');">+</button>
+      <button onclick="updateCalculation('1');" class="calculator-btn gray-btn">
+        1
+      </button>
+      <button onclick="updateCalculation('2');" class="calculator-btn gray-btn">
+        2
+      </button>
+      <button onclick="updateCalculation('3');" class="calculator-btn gray-btn">
+        3
+      </button>
+      <button
+        onclick="updateCalculation(' + ');"
+        class="calculator-btn orange-btn"
+      >
+        +
+      </button>
     </p>
     <p>
-      <button onclick="updateCalculation('4');">4</button>
-      <button onclick="updateCalculation('5');">5</button>
-      <button onclick="updateCalculation('6');">6</button>
+      <button onclick="updateCalculation('4');" class="calculator-btn gray-btn">
+        4
+      </button>
+      <button onclick="updateCalculation('5');" class="calculator-btn gray-btn">
+        5
+      </button>
+      <button onclick="updateCalculation('6');" class="calculator-btn gray-btn">
+        6
+      </button>
 
-      <button onclick="updateCalculation(' - ');">-</button>
+      <button
+        onclick="updateCalculation(' - ');"
+        class="calculator-btn orange-btn"
+      >
+        -
+      </button>
     </p>
     <p>
-      <button onclick="updateCalculation('7');">7</button>
-      <button onclick="updateCalculation('8');">8</button>
-      <button onclick="updateCalculation('9');">9</button>
-      <button onclick="updateCalculation(' * ');">*</button>
+      <button onclick="updateCalculation('7');" class="calculator-btn gray-btn">
+        7
+      </button>
+      <button onclick="updateCalculation('8');" class="calculator-btn gray-btn">
+        8
+      </button>
+      <button onclick="updateCalculation('9');" class="calculator-btn gray-btn">
+        9
+      </button>
+      <button
+        onclick="updateCalculation(' * ');"
+        class="calculator-btn orange-btn"
+      >
+        *
+      </button>
     </p>
     <p>
-      <button onclick="updateCalculation('0');">0</button>
-      <button onclick="updateCalculation('.');">.</button>
-      <button onclick="calculationResult()">=</button>
-      <button onclick="updateCalculation(' / ');">/</button>
+      <button onclick="updateCalculation('0');" class="calculator-btn gray-btn">
+        0
+      </button>
+      <button onclick="updateCalculation('.');" class="calculator-btn gray-btn">
+        .
+      </button>
+      <button onclick="calculationResult()" class="calculator-btn gray-btn">
+        =
+      </button>
+      <button
+        onclick="updateCalculation(' / ');"
+        class="calculator-btn orange-btn"
+      >
+        /
+      </button>
     </p>
     <p>
-      <button onclick="clearCalculation()">Clear</button>
+      <button
+        onclick="clearCalculation()"
+        class="calculator-btn clear-btn gray-btn"
+      >
+        Clear
+      </button>
     </p>
-    <script>
-      // let calculation = "";
-      let calculation = localStorage.getItem("calculation") || "";
-      const paraCal = document.querySelector(".js-calculation");
-      paraCal.innerText = `${calculation}`;
-      function updateCalculation(number) {
-        calculation += number;
-        localStorage.setItem("calculation", calculation);
-        console.log(calculation);
-        paraCal.innerText = `${calculation}`;
-      }
-      function clearCalculation() {
-        calculation = "";
-        localStorage.setItem("calculation", calculation);
-        console.log("Cleared");
-        paraCal.innerText = `${calculation}`;
-      }
-      function calculationResult() {
-        calculation = eval(calculation);
-        localStorage.setItem("calculation", calculation);
-        console.log(calculation);
-        paraCal.innerText = `${calculation}`;
-      }
-    </script>
+    <script src="./scripts/05-calculator.js"></script>
   </body>
 </html>
