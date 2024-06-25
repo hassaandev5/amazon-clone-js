@@ -2,42 +2,7 @@
 <html>
   <head>
     <title>Document Object Model - Projects</title>
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .sub-btn {
-        border: none;
-        background-color: black;
-        color: white;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-weight: bold;
-        border-radius: 50px;
-        cursor: pointer;
-        margin-bottom: 30px;
-      }
-      .is-sub {
-        background-color: rgb(240, 240, 240);
-        color: black;
-      }
-      .cost-input,
-      .key-up-input {
-        font-size: 15px;
-        padding: 10px;
-      }
-      .calculate-btn,
-      .clear-btn {
-        border: none;
-        font-size: 15px;
-        background-color: green;
-        color: white;
-        padding: 12px 15px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="./styles/10-dom-projects.css" />
   </head>
   <body>
     <p>Youtube Subscribe Button</p>
@@ -64,55 +29,6 @@
     />
     <button onclick="clearText()" class="clear-btn">Clear</button>
     <p class="js-key-up-result"></p>
-    <script>
-      // console.log(window);
-      // console.log(document.querySelector(".js-sub-btn"));
-      const paraPrint = document.querySelector(".js-key-up-result");
-      function sub() {
-        const subBtnElement = document.querySelector(".js-sub-btn");
-        if (subBtnElement.innerText === "Subscribe") {
-          subBtnElement.innerText = "Subscribed";
-          subBtnElement.classList.add("is-sub");
-        } else {
-          subBtnElement.innerText = "Subscribe";
-          subBtnElement.classList.remove("is-sub");
-        }
-      }
-      function calculateTotalCost() {
-        // result-para-element
-        const resParaElement = document.querySelector(".js-cost-result");
-        // input
-        const calInput = document.querySelector(".js-cost-input");
-        let cost = Number(calInput.value);
-        if (calInput.value === "") {
-          resParaElement.innerHTML = "Enter a cost first";
-          // return;
-        } else if (isNaN(cost)) {
-          resParaElement.innerHTML = "Error: Invalid Cost Input";
-        } else {
-          if (cost < 40 && cost >= 0) {
-            cost += 10;
-            cost = Math.round(cost * 100) / 100;
-          } else if (cost < 0) {
-            resParaElement.innerHTML = "Error: Cost Cannot be less than $0";
-            return;
-          }
-
-          resParaElement.innerHTML = `$${cost}`;
-        }
-      }
-      function handelCostEnterKey(event) {
-        if (event.key === "Enter") {
-          calculateTotalCost();
-        }
-      }
-      function printKeyRelease() {
-        const inputPrintElem = document.querySelector(".js-key-up-input");
-        paraPrint.innerText = inputPrintElem.value;
-      }
-      function clearText() {
-        paraPrint.innerText = "";
-      }
-    </script>
+    <script src="./scripts/10-dom-projects.js"></script>
   </body>
 </html>
