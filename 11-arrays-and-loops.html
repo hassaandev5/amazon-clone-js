@@ -24,14 +24,19 @@
 
       const check = {
         name: "asdw",
+        // this is a function treated as property prior ES6+
         heha: function (a) {
           console.log("hello");
           return a;
         },
+        // this is a shorthand method property introduced in ES6+
         haha() {
           console.log("hola");
         },
       };
+
+      console.log(check.heha);
+      console.log(check.haha);
     </script>
   </body>
 </html>
