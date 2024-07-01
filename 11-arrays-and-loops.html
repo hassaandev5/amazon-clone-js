@@ -11,7 +11,13 @@
       myArray[3] = "check mate";
       console.log(myArray);
 
-      [1, "hi", true, { name: "jhon", age: 25 }, [1, 2, 3, 4, 5]];
+      const mySecondArray = [
+        1,
+        "hi",
+        true,
+        { name: "jhon", age: 25 },
+        [1, 2, 3, 4, 5],
+      ];
       console.log(typeof myArray);
       console.log(Array.isArray(myArray));
 
@@ -25,18 +31,20 @@
       const check = {
         name: "asdw",
         // this is a function treated as property(called method) prior ES6+
-        heha: function (a) {
+        fnc1: function (a) {
           console.log("hello");
           return a;
         },
         // this is a shorthand method property(also called method) introduced in ES6+
-        haha() {
+        fnc2() {
           console.log("hola");
         },
       };
 
-      console.log(check.heha);
-      console.log(check.haha);
+      console.log(check.fnc1);
+      console.log(check.fnc2);
+
+      console.log(mySecondArray);
     </script>
   </body>
 </html>
