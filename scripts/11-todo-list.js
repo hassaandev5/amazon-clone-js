@@ -6,4 +6,6 @@ function addTodo() {
 
   todoList.push(todoName);
   console.log(todoList);
+
+  inputElement.value = "";
 }
