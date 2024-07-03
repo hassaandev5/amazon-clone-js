@@ -1,7 +1,8 @@
-const todoList = [];
+let todoList = [];
 
 function addTodo() {
   const inputElement = document.querySelector(".js-todo-input");
   const todoName = inputElement.value;
-  console.log(todoName);
+  todoList.push(todoName);
+  console.log(todoList);
 }
