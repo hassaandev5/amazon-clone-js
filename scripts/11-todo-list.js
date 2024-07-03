@@ -9,4 +9,9 @@ function addTodo() {
   console.log(todoList);
 
   inputElement.value = "";
+  paraElement.innerHTML = "";
+
+  for (let i = 0; i < todoList.length; i++) {
+    paraElement.innerHTML += `<li>${todoList[i]}</li>`;
+  }
 }
