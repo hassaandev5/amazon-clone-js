@@ -1,4 +1,4 @@
-const todoList = ["This", "is", "bad", "practice"];
+const todoList = ["Eat", "code", "sleep", "repeat"];
 
 renderTodoList();
 function renderTodoList() {
