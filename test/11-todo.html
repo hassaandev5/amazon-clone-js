@@ -12,8 +12,21 @@
       let val = lastValue(nums);
       console.log(val);
 
+      swapFirstLast(nums);
+      console.log(nums);
+
       function lastValue(arr) {
         return arr[arr.length - 1];
+      }
+
+      function swapFirstLast(arr) {
+        let temp;
+
+        temp = arr[0];
+        arr[0] = arr[arr.length - 1];
+        arr[arr.length - 1] = temp;
+
+        return arr;
       }
     </script>
   </body>
