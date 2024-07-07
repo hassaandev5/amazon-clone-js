@@ -3,5 +3,18 @@
   <head>
     <title>test exericse</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      const nums = [10, 20, 30];
+      nums[2] = 99;
+
+      console.log(nums);
+      let val = lastValue(nums);
+      console.log(val);
+
+      function lastValue(arr) {
+        return arr[arr.length - 1];
+      }
+    </script>
+  </body>
 </html>
