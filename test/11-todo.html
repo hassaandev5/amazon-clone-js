@@ -6,6 +6,8 @@
   <body>
     <script>
       const nums = [10, 20, 30];
+      const greetings = ["hi", "good", "bye", "sayonara"];
+      // a
       nums[2] = 99;
 
       console.log(nums);
@@ -14,11 +16,14 @@
 
       swapFirstLast(nums);
       console.log(nums);
+      swapFirstLast(greetings);
+      console.log(greetings);
 
+      // b
       function lastValue(arr) {
         return arr[arr.length - 1];
       }
-
+      // c
       function swapFirstLast(arr) {
         let temp;
 
@@ -27,6 +32,45 @@
         arr[arr.length - 1] = temp;
 
         return arr;
+      }
+      // d
+      for (let i = 0; i <= 10; i++) {
+        if (i % 2 == 0) {
+          console.log(i);
+        }
+      }
+
+      // e
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+
+      console.log("f start");
+      // f
+      let j = 0;
+      while (j <= 10) {
+        if (j % 2 == 0) {
+          console.log(j);
+        }
+        j++;
+      }
+      console.log("f 2.0 start");
+      let k = 5;
+      while (k >= 0) {
+        console.log(k);
+        k--;
+      }
+
+      // g
+      let myNewArr = addOne(nums);
+      console.log(myNewArr);
+
+      function addOne(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          newArr[i] = arr[i] + 1;
+        }
+        return newArr;
       }
     </script>
   </body>
