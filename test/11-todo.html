@@ -61,7 +61,7 @@
         k--;
       }
 
-      // g
+      // g - h
       let myNewArr = addOne(nums);
       console.log(myNewArr);
 
@@ -72,6 +72,42 @@
         }
         return newArr;
       }
+
+      // i
+      function addNum(arr, num) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          newArr[i] = arr[i] + num;
+        }
+        return newArr;
+      }
+
+      function addArrays(arr1, arr2) {
+        let newArr = [];
+        if (arr1.length === arr2.length) {
+          for (let i = 0; i < arr1.length; i++) {
+            newArr[i] = arr1[i] + arr2[i];
+          }
+        } else {
+          newArr = "The Arrays don't match";
+        }
+        return newArr;
+      }
+
+      console.log("positive nums start");
+      function positiveNums(nums) {
+        let count = 0;
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[`${i}`] < 0) {
+            count++;
+          }
+        }
+        return count;
+      }
+      let numbers = [-1, 2, 3, -5, 6, -7];
+      console.log(numbers);
+      let p = positiveNums(numbers);
+      console.log(p);
     </script>
   </body>
 </html>
