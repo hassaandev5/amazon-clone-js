@@ -74,6 +74,24 @@
       }
       console.log(nums);
       console.log(doubledNums);
+
+      // NOTE
+      // Javascript arrays are special type of objects (their properties are indicies and indicies are numeric values)
+
+      // Dot notation is used for accessing properties of objects where the property name is a valid JavaScript identifier. A valid identifier must start with a letter, underscore (_), or dollar sign ($), and can be followed by letters, digits, underscores, or dollar signs.
+      // Array indices are numbers, and numbers are not valid identifiers for dot notation.
+
+      // Dot notation cannot be used with property names that are numbers or strings that do not qualify as valid identifiers.
+
+      // For that purpose we use bracket notation obj[]
+      // we can use bracket notation to access array elements with either numbers or strings that can be converted to numbers.
+      const obj = {
+        0: "joeey",
+        "age-a": 25,
+      };
+      // console.log(obj.0); // This will result in a syntax error
+      console.log(obj[0]); // This will result in 'joeey'
+      console.log(obj["0"]); // This will result in joeey
     </script>
   </body>
 </html>
