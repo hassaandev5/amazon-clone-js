@@ -75,6 +75,14 @@
       console.log(nums);
       console.log(doubledNums);
 
+      // Arrays are references
+      const array1 = [1, 2, 3];
+      const array2 = array1;
+      array2.push(4);
+
+      console.log(array1);
+      console.log(array2);
+
       // NOTE
       // Javascript arrays are special type of objects (their properties are indicies and indicies are numeric values)
 
