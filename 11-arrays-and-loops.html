@@ -83,6 +83,14 @@
       console.log(array1);
       console.log(array2);
 
+      // How to avoid Arrays reference behaviour
+      const newArray1 = [1, 2, 3];
+      const newArray2 = newArray1.slice(); // this will copy the newArray1 values and newArray2 will refer to the copied array values
+      newArray2.push(4);
+
+      console.log(newArray1);
+      console.log(newArray2);
+
       // NOTE
       // Javascript arrays are special type of objects (their properties are indicies and indicies are numeric values)
 
