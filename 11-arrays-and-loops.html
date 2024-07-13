@@ -91,6 +91,15 @@
       console.log(newArray1);
       console.log(newArray2);
 
+      // shortcut: Destructuring in arrays
+
+      const newArray3 = [1, 2, 3];
+      // let firstValue = newArray3[0];
+      // let secondValue = newArray3[1];
+      // let thirdValue = newArray3[2];
+      const [firstValue, secondValue, thirdValue] = newArray3;
+      console.log(firstValue, secondValue, thirdValue);
+
       // NOTE
       // Javascript arrays are special type of objects (their properties are indicies and indicies are numeric values)
 
