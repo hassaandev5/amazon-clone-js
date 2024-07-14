@@ -100,6 +100,17 @@
       const [firstValue, secondValue, thirdValue] = newArray3;
       console.log(firstValue, secondValue, thirdValue);
 
+      // loop: break and continue
+      for (let i = 0; i < 10; i++) {
+        if (i === 3) {
+          continue; // let us skip the current iteration
+        }
+        if (i === 5) {
+          break; // let us exit the loop
+        }
+        console.log(i);
+      }
+
       // NOTE
       // Javascript arrays are special type of objects (their properties are indicies and indicies are numeric values)
 
