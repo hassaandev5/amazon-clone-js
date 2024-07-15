@@ -102,13 +102,23 @@
 
       // loop: break and continue
       for (let i = 0; i < 10; i++) {
-        if (i === 3) {
+        if (i % 3 === 0) {
           continue; // let us skip the current iteration
         }
         if (i === 5) {
           break; // let us exit the loop
         }
         console.log(i);
+      }
+
+      let i = 0;
+      while (i < 10) {
+        if (i % 3 === 0) {
+          i++;
+          continue;
+        }
+        console.log(i);
+        i++;
       }
 
       // NOTE
