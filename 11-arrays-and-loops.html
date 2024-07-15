@@ -66,14 +66,18 @@
         console.log(todoList[i]);
       }
 
-      const nums = [1, 1, 3];
-      const doubledNums = [];
+      console.log(doubleArray([1, 1, 3]));
+      console.log(doubleArray([5, 2, 4]));
+      function doubleArray(nums) {
+        const doubledNums = [];
 
-      for (i = 0; i < nums.length; i++) {
-        doubledNums.push(nums[i] * 2);
+        for (i = 0; i < nums.length; i++) {
+          doubledNums.push(nums[i] * 2);
+        }
+        return doubledNums;
       }
-      console.log(nums);
-      console.log(doubledNums);
+      // console.log(nums);
+      // console.log(doubledNums);
 
       // Arrays are references
       const array1 = [1, 2, 3];
