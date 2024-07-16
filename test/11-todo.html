@@ -144,6 +144,23 @@
       }
 
       countWords(fruits);
+
+      // o
+
+      function findSearch(arr) {
+        let found = false;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === "search") {
+            console.log("The index of the word 'search' is " + i);
+            found = true;
+          }
+        }
+        if (!found) {
+          console.log(-1);
+        }
+      }
+      let findMe = ["hi", "this", "is", "search", "keyword"];
+      findSearch(findMe);
     </script>
   </body>
 </html>
