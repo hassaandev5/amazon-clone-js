@@ -180,7 +180,7 @@
 
       // r
       function removeEggs(food) {
-        for (let i = 0; i < food.length; i++) {
+        for (let i = food.length; i > 0; i--) {
           if (food[i] === "egg") {
             food.splice(i, 1);
           }
