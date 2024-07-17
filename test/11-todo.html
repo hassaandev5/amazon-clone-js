@@ -178,16 +178,21 @@
       }
       findIndex(["yellow", "white", "orange", "red", "black"], "red");
 
-      // r
+      // r, t
       function removeEggs(food) {
+        let count = 0;
         for (let i = food.length; i > 0; i--) {
           if (food[i] === "egg") {
+            count++;
+            if (count === 3) {
+              return food;
+            }
             food.splice(i, 1);
           }
         }
         return food;
       }
-      removeEggs(["bread", "egg", "banana"]);
+      removeEggs(["bread", "egg", "banana", "egg", "cart", "egg"]);
     </script>
   </body>
 </html>
