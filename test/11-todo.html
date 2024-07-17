@@ -186,6 +186,7 @@
           if (food[i] === "egg") {
             count++;
             if (count === 3) {
+              // food.reverse() // s part
               return food;
             }
             food.splice(i, 1);
@@ -195,6 +196,36 @@
         return food;
       }
       removeEggs(["bread", "egg", "banana", "egg", "cart", "egg"]);
+
+      // u
+      function removeEggModified(food) {
+        let count = 0;
+        let newFood = food.slice();
+        newFood.reverse();
+        for (let i = newFood.length; i > 0; i--) {
+          if (newFood[i] === "egg") {
+            count++;
+            if (count === 3) {
+              newFood.reverse();
+              return newFood;
+            }
+            newFood.splice(i, 1);
+          }
+        }
+        newFood.reverse();
+        return newFood;
+      }
+
+      removeEggModified([
+        "bread",
+        "egg",
+        "banana",
+        "egg",
+        "cart",
+        "egg",
+        "col",
+        "egg",
+      ]);
     </script>
   </body>
 </html>
