@@ -178,6 +178,19 @@
       }
       findIndex(["yellow", "white", "orange", "red", "black"], "red");
 
+      // w
+      function unique(arr) {
+        let uniqueArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          let firstIndex = findIndex(arr, arr[i]);
+          if (i === firstIndex) {
+            uniqueArr.push(arr[i]);
+          }
+        }
+        return uniqueArr;
+      }
+      unique(["red", "red", "blue", "orange", "black", "orange"]);
+
       // r, t, s
       function removeEggs(food) {
         let count = 0;
