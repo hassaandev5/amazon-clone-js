@@ -178,9 +178,10 @@
       }
       findIndex(["yellow", "white", "orange", "red", "black"], "red");
 
-      // r, t
+      // r, t, s
       function removeEggs(food) {
         let count = 0;
+        // food.reverse() // s part
         for (let i = food.length; i > 0; i--) {
           if (food[i] === "egg") {
             count++;
@@ -190,6 +191,7 @@
             food.splice(i, 1);
           }
         }
+        // food.reverse() // s part
         return food;
       }
       removeEggs(["bread", "egg", "banana", "egg", "cart", "egg"]);
