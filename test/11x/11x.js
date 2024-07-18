@@ -1,5 +1,9 @@
 const todoList = JSON.parse(localStorage.getItem("todoList")) || [
-  { name: "placeholder", dueDate: "2023-12-16" },
+  { name: "Placeholder Todo1", dueDate: "2023-12-16" },
+  { name: "Placeholder Todo2", dueDate: "2023-12-16" },
+  { name: "Placeholder Todo3", dueDate: "2023-12-16" },
+  { name: "Placeholder Todo4", dueDate: "2023-12-16" },
+  { name: "Placeholder Todo5", dueDate: "2023-12-16" },
 ];
 
 renderTodoList();
